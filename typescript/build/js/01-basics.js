@@ -1,0 +1,46 @@
+"use strict";
+//Typescript is a strongly typed language and the typescript compiler checks the types which you provided while writing the code and it's linter gives error if there is conflict in any of type instead of giving the error in the
+//We are going to use the typescript because we don't want the runtime error which javascript produces
+//General build in types provided by typescript
+let a1 = "tim";
+let a2 = false;
+let a3 = 12;
+let a4 = ["tim", "lena"];
+let a5 = [23, "lex"]; // this is a example of the tuple
+let a6 = [23, "ttt", 54];
+let a7 = 34;
+let a8; //this is used or came when any function is returning error or we end up checking all union and there is no union left in the function argument
+let a9;
+let a10;
+let a11;
+const pete = {
+    name: "pete",
+    level: "two",
+    platform: "SNL",
+};
+const jake = {
+    name: "jake paul",
+    level: 0,
+};
+//Types with arrays
+let arr1 = ["tim", 23, false];
+let arr2 = [23, 345];
+let arr3 = ["tim", 43, false]; //this is tuple which looks like array
+let arr4 = ["tim"];
+let arr5;
+//assertion
+const addOrConcat = (a, b, c) => {
+    if (c == "add") {
+        return a + b;
+    }
+    else {
+        return "" + a + b;
+    }
+};
+const result = addOrConcat(23, 44, "concat"); //here we make the assertion but we need to be careful before making the assertion because it fails the typescript
+//Where to use typescript
+// const year = document.getElementById("year")!; we can use non-null operator here to tell explicitly to typescript compiler that the it's not a null
+// also we can make assertion here
+const year = document.getElementById("year");
+const presentYear = new Date().getFullYear().toString();
+year.innerHTML = presentYear;

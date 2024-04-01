@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,12 @@
 </head>
 
 <body class="min-h-screen dark:bg-black bg-white dark:text-white text-black">
-    <header class="fixed z-10 w-full bg-teal-700">
+    <header class="sticky z-10 top-0 w-full bg-teal-700">
         <section class="mx-auto max-w-4xl flex justify-between items-center p-2 ">
-            <h1 id="#hero" class="text-3xl font-bold sm:text-4xl text-white">Acme Co</h1>
+            <h1 class="text-3xl font-bold sm:text-4xl text-white"> <a href="#hero">Acme Co</a></h1>
             <nav class="text-2xl space-x-2 hidden sm:block ">
                 <a href="#rockets">Rockets</a>
-                <a href="#testimonilas">testimonials</a>
+                <a href="#testimonials">testimonials</a>
                 <a href="#contact">Contact Us</a>
             </nav>
             <button id="mobile-btn" class="sm:hidden h-8  relative w-8 bg-none">
@@ -28,14 +28,134 @@
         </section>
     </header>
     <nav class="hidden">
+        <a href="#hero">Home</a>
+        <a href="rockets">Rockets</a>
+        <a href="testimonials">testimonials</a>
+        <a href="contact">Contact Us</a>
+        <a href="legal">Legal</a>
     </nav>
-    <main>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
+    <main class="max-w-4xl mx-auto p-1">
+        <section id="hero"
+            class="flex max-w-4xl p-3 gap-8 my-11 scroll-mt-14 mx-auto flex-col items-center sm:flex-row">
+            <article class=" flex flex-col sm:w-1/2  ">
+                <h1
+                    class="text-4xl max-w-xl text-center sm:text-left  sm:text-5xl font-bold dark:text-white  text-black">
+                    We
+                    Go
+                    There
+                    Where <span class="text-indigo-500 ">No One Has</span> Gone Before</h1>
+                <p
+                    class="text-2xl max-w-xl mt-2 text-center sm:text-left sm:text-3xl dark:text-slate-500 text-slate-600 font-bold">
+                    Extreme
+                    engineering
+                    equipped with AI automation our rockets can fly on their own and get you anywhere</p>
+                <p
+                    class="text-2xl max-w-xl mt-2 sm:text-left text-center sm:text-3xl dark:text-slate-500 text-slate-600 font-bold">
+                    Think
+                    Acme Rocket</p>
+            </article>
+            <img src="./images/rocketman.png" class="-order-1 sm:order-1 w-1/2 " alt="">
+        </section>
+        <hr class="sm:w-full w-1/2  mx-auto dark:bg-white bg-black">
+        <section id="rockets" class="max-w-4xl mx-auto flex flex-col my-10  scroll-mt-14 items-center">
+            <h2 class="text-4xl font-bold'">Our Rockets</h2>
+            <ul class="flex flex-col my-8 sm:flex-row gap-4 justify-between items-center">
+                <li
+                    class="dark:bg-black p-4 gap-2 shadow-sm dark:shadow-white shadow-black flex flex-col rounded-lg items-center">
+                    <img src="./images/rocketdab.png" class="w-1/2" alt="rocket1">
+                    <h3 class="text-2xl font-medium">Space-XA</h3>
+                    <p class="text-xl font-medium text-slate-400">$-550M</p>
+                    <p class="text-xl font-medium text-slate-400">Affordable</p>
+                </li>
+                <li
+                    class="dark:bg-black p-4 shadow-sm dark:shadow-white shadow-black flex flex-col rounded-lg items-center">
+                    <img src="./images/rocketride.png" class="w-1/2" alt="rocket1">
+                    <h3 class="text-2xl font-medium">Space-Ultron</h3>
+                    <p class="text-xl font-medium text-slate-400">$-1B</p>
+                    <p class="text-xl font-medium text-slate-400">Small Adventure</p>
+                </li>
+                <li
+                    class="dark:bg-black p-4 shadow-sm dark:shadow-white shadow-black flex flex-col rounded-lg items-center">
+                    <img src="./images/rocketlaunch.png" class="w-1/2" alt="rocket1">
+                    <h3 class="text-2xl font-medium">Space-Expo</h3>
+                    <p class="text-xl font-medium text-slate-400">$-3B</p>
+                    <p class="text-xl font-medium text-slate-400">CruiseShip</p>
+                </li>
+            </ul>
+        </section>
+        <hr class="sm:w-full w-1/2  mx-auto dark:bg-white bg-black">
+        <section id="testimonials"
+            class="max-w-4xl mx-auto p-10 sm:p-0 flex flex-col items-center gap-4 my-8 scroll-mt-14">
+            <h2 class="text-4xl font-bold text-center my-6">Testimonials</h2>
+            <figure class="text-white flex flex-col gap-2">
+                <blockquote class="bg-teal-500  pt-10 pl-12 pr-12 pb-12 rounded-lg ">
+                    <p class="before:content-['\201C'] text-2xl font-medium  relative before:font-serif before:text-8xl before:absolute before:-top-10 before:-left-10
+                        after:content-['\201D']
+                        after:font-serif after:text-8xl after:absolute after:-right-8 after:-bottom-24">
+                        Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Itaque doloribus consequuntur id iste
+                        inventore libero suscipit cum. Perspiciatis illo sit laudantium fuga dolorum fugiat consectetur
+                        velit cumque quibusdam, perferendis fugit.</p>
+                </blockquote>
+                <figcaption class="text-2xl italic text-right">-Sensei Genx</figcaption>
+            </figure>
+            <figure class="text-white flex flex-col gap-2">
+                <blockquote class="bg-teal-500  pt-10 pl-12 pr-12 pb-12 rounded-lg ">
+                    <p class="before:content-['\201C'] text-2xl font-medium  relative before:font-serif before:text-8xl before:absolute before:-top-10 before:-left-10
+                        after:content-['\201D']
+                        after:font-serif after:text-8xl after:absolute after:-right-8 after:-bottom-24">
+                        Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Itaque doloribus consequuntur id iste
+                        inventore libero suscipit cum. Perspiciatis illo sit laudantium fuga dolorum fugiat consectetur
+                        velit cumque quibusdam, perferendis fugit.</p>
+                </blockquote>
+                <figcaption class="text-2xl italic text-right">-Sensei Genx</figcaption>
+            </figure>
+            <figure class="text-white flex flex-col gap-2">
+                <blockquote class="bg-teal-500  pt-10 pl-12 pr-12 pb-12 rounded-lg ">
+                    <p class="before:content-['\201C'] text-2xl font-medium  relative before:font-serif before:text-8xl before:absolute before:-top-10 before:-left-10
+                        after:content-['\201D']
+                        after:font-serif after:text-8xl after:absolute after:-right-8 after:-bottom-24">
+                        Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit. Itaque doloribus consequuntur id iste
+                        inventore libero suscipit cum. Perspiciatis illo sit laudantium fuga dolorum fugiat consectetur
+                        velit cumque quibusdam, perferendis fugit.</p>
+                </blockquote>
+                <figcaption class="text-2xl italic text-right">-Sensei Genx</figcaption>
+            </figure>
+        </section>
+        <hr class="sm:w-full w-1/2  mx-auto dark:bg-white bg-black">
+        <section id="contact" class="max-w-4xl p-4 my-10 scroll-mt-14 mx-auto">
+            <h2 class="text-4xl font-bold text-center my-6">Contact Us</h2>
+
+            <form action="" class="flex flex-col p-2 bg-teal-700 rounded-lg gap-2 ">
+                <label for="name" class="text-3xl font-medium">Name :</label>
+                <input type="text" class="rounded-lg p-1 font-black text-2xl" name="name" placeholder="your name..."
+                    id="name">
+                <label for="subject" class="text-3xl font-medium">Your Subject :</label>
+                <textarea name="subject" class="rounded-lg p-1 font-black text-2xl" placeholder="your subject..."
+                    id="subject" cols="30" rows="10"></textarea>
+                <button class="w-full bg-black text-white mx-auto p-2 rounded-lg font-medium text-2xl">Submit</button>
+            </form>
+        </section>
     </main>
-    <footer>
+    <footer class="bg-teal-600 text-white flex justify-between  p-2 scroll-mt-14">
+        <article class="flex flex-col w-1/2 sm:1/3 items-start gap-1">
+            <address>Metropolis gotham city</address>
+            <p>lot's of visits come here but no one got them self up here the world can be taken into the slave but one
+                needed to make them slave</p>
+            <a href="www.gmail.com">rostery2k@gmail.com</a>
+            <a href="">www.break.com</a>
+        </article>
+        <nav class="text-2xl w-1/3 sm:flex justify-between flex-col gap-2  items-center hidden ">
+            <a href="#rockets">Rockets</a>
+            <a href="#testimonials">testimonials</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+        <div class="flex flex-col w-1/3 sm:gap-2">
+            <p class="text-right">Copyright &copy; <span id="year">2022</span></p>
+            <p class="text-right">All Rights Reserved</p>
+        </div>
     </footer>
 </body>
 

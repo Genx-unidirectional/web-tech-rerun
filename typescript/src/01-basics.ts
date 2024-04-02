@@ -79,7 +79,113 @@ const result = addOrConcat(23, 44, "concat") as string; //here we make the asser
 
 // const year = document.getElementById("year")!; we can use non-null operator here to tell explicitly to typescript compiler that the it's not a null
 
-// also we can make assertion here
+// also we can make assertion here (as we make assertion we are failing the typescript)
 const year = document.getElementById("year") as HTMLSpanElement;
 const presentYear: string = new Date().getFullYear().toString();
 year.innerHTML = presentYear;
+
+//keyOf assertion and index signatures
+// why there is need of this see below
+
+type ObjBody = {
+  // [index: string]: number | string;
+  name: string;
+  age: number;
+  height: string;
+};
+const obj: ObjBody = {
+  name: "Ganesh",
+  age: 21,
+  height: "176 cm",
+};
+
+for (let key in obj) {
+  // console.log(obj[key]);// here problem comes because the key is dynamic so irt has implicit any type on it
+  console.log(obj[key as keyof ObjBody]);
+}
+
+const propPrinter = (obj: ObjBody, key: keyof ObjBody) => {
+  return obj[key];
+};
+
+//generics
+const isObj1 = <T>(arg: T): T => {
+  return arg;
+};
+
+//Make the  generic which check any thing is coming is object or not
+
+const isObj = <T>(obj: T): boolean => {
+  return typeof obj === "object" && !Array.isArray(obj) && !obj == null;
+};
+
+//Make the generic which check truthy value of anything
+
+const isTrue = <T>(arg: T): { arg: T; is: boolean } => {
+  if (typeof arg === "object" && Object.keys(arg as keyof T).length < 0) {
+    return { arg, is: false };
+  }
+  if (Array.isArray(arg) && arg.length < 0) {
+    return { arg, is: false };
+  }
+  return { arg, is: !!arg };
+};
+
+type TruthType<T> = {
+  value: T;
+  is: boolean;
+};
+
+const isTrue2 = <T>(arg: T): TruthType<T> => {
+  if (typeof arg === "object" && Object.keys(arg as keyof T).length < 0) {
+    return { value: arg, is: false };
+  }
+  if (Array.isArray(arg) && arg.length < 0) {
+    return { value: arg, is: false };
+  }
+  return { value: arg, is: !!arg };
+};
+
+//Make the generic function which takes array of object and on of the key of those object and return array of property value of that object with that key
+
+interface HasId {
+  id: number;
+}
+
+const PropsArrMaker = <T extends HasId, K extends keyof T>(
+  arr: T[],
+  key: K
+): T[K][] => {
+  return arr.map((item) => item[key]);
+};
+const testArr = [
+  {
+    id: 1,
+    name: "tim",
+  },
+  {
+    id: 2,
+    name: "jake",
+  },
+  {
+    id: 3,
+    name: "cake",
+  },
+  {
+    id: 3,
+    name: "leo",
+  },
+];
+console.log("heel");
+const result1 = PropsArrMaker(testArr, "id");
+console.log(result1);
+
+//Utility types basics
+//Pick utility type
+//Omit utility
+//Extract utility
+//Exclude utility
+//Record
+//ReturnType
+//ParameterType
+//ReadonlyType
